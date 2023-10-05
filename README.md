@@ -28,7 +28,7 @@ Om aan de slag te gaan met CleanMobility OpenProp, volg je deze stappen:
 
 ## Bijdragen
 
-We verwelkomen bijdragen van de gemeenschap om CleanMobility OpenProp te verbeteren en uit te breiden. Als je bugs vindt, nieuwe functies wilt voorstellen of codeverbeteringen wilt indienen, maak dan een pull-verzoek (Pull Request) aan en we zullen het beoordelen.
+We verwelkomen bijdragen van de gemeenschap om CleanMobility OpenProp te verbeteren en uit te breiden. Als je bugs vindt, nieuwe functies wilt voorstellen of codeverbeteringen wilt indienen, maak dan een pull-verzoek (Pull Request) aan en we zullen het beoordelen. Ik ben van plan een Python versie te maken, dit kan echter even duren.
 
 ## Licentie
 
