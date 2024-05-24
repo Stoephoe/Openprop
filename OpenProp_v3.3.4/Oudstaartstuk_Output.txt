@@ -1,0 +1,68 @@
+					 Oudstaartstuk_Output.txt 
+
+					 OpenProp Output Table
+
+Date and time: 2020-02-04 15:06:07
+
+Js 	= 0.7881
+Ct 	= 0.2226
+Cq 	= 0.0661
+Cp 	= 0.2635
+VMIV 	= 1.0000
+Kt 	= 0.0543
+Kq 	= 0.0081
+Eff 	= 0.8447
+Tau 	= 1.0000
+Duct Circulation 	= 0.0000
+
+Output at the control points for the propeller 
+
+r/R		 G			 Va		 Vt		 Ua		 Ua(ring)	 Ut		 Beta	 BetaI	 c/D	 Cd
+0.20986  0.014575  1.00000  0.0000  0.03631  0.00000  -0.04921  50.084  52.773  0.07236  0.00800
+0.24987  0.015054  1.00000  0.0000  0.04411  0.00000  -0.04628  45.113  47.708  0.08130  0.00800
+0.28988  0.015742  1.00000  0.0000  0.05162  0.00000  -0.04866  40.872  43.533  0.08843  0.00800
+0.32988  0.016437  1.00000  0.0000  0.05879  0.00000  -0.04914  37.251  39.909  0.09450  0.00800
+0.36989  0.017066  1.00000  0.0000  0.06497  0.00000  -0.04858  34.145  36.755  0.10047  0.00800
+0.40990  0.017596  1.00000  0.0000  0.07019  0.00000  -0.04743  31.466  34.001  0.10563  0.00800
+0.44990  0.018013  1.00000  0.0000  0.07458  0.00000  -0.04593  29.143  31.588  0.10956  0.00800
+0.48991  0.018308  1.00000  0.0000  0.07826  0.00000  -0.04427  27.114  29.463  0.11247  0.00800
+0.52992  0.018477  1.00000  0.0000  0.08135  0.00000  -0.04255  25.332  27.583  0.11391  0.00800
+0.56993  0.018516  1.00000  0.0000  0.08397  0.00000  -0.04084  23.757  25.913  0.11374  0.00800
+0.60993  0.018420  1.00000  0.0000  0.08619  0.00000  -0.03917  22.357  24.420  0.11256  0.00800
+0.64994  0.018180  1.00000  0.0000  0.08809  0.00000  -0.03756  21.105  23.081  0.11092  0.00800
+0.68995  0.017785  1.00000  0.0000  0.08971  0.00000  -0.03604  19.981  21.874  0.10875  0.00800
+0.72995  0.017219  1.00000  0.0000  0.09112  0.00000  -0.03459  18.966  20.781  0.10579  0.00800
+0.76996  0.016459  1.00000  0.0000  0.09233  0.00000  -0.03323  18.046  19.788  0.10140  0.00800
+0.80997  0.015469  1.00000  0.0000  0.09339  0.00000  -0.03195  17.208  18.882  0.09501  0.00800
+0.84997  0.014195  1.00000  0.0000  0.09430  0.00000  -0.03074  16.443  18.052  0.08678  0.00800
+0.88998  0.012544  1.00000  0.0000  0.09509  0.00000  -0.02960  15.741  17.290  0.07746  0.00800
+0.92999  0.010334  1.00000  0.0000  0.09574  0.00000  -0.02852  15.096  16.586  0.06574  0.00800
+0.96999  0.007086  1.00000  0.0000  0.09618  0.00000  -0.02745  14.500  15.935  0.04248  0.00800
+
+The propeller does not have a duct.
+
+
+Js 	 [ ], advance coefficient.
+Ct 	 [ ], required thrust coefficient.
+Cp 	 [ ], power coefficient. Cp = Cq*pi/J.
+Kt 	 [ ], thrust coefficient. Kt = Ct*Js^2*pi/8.
+Kq 	 [ ], torque coefficient. Kq = Cq*Js^2*pi/16.
+VMIV 	 [ ], volumetric mean inflow velocity / ship velocity.
+Eff 	 [ ], efficiency = Ct*VMIV/Cp.
+Tau 	 [ ], thrust ratio = propeller thrust / total thrust.
+
+r/R 	 [ ], radial position of control points / propeller radius.
+G  	 [ ], section circulation / 2*pi*R.
+Va 	 [ ], axial inflow velocity / ship velocity.
+Vt 	 [ ], tangential inflow velocity / ship velocity.
+Ua 	 [ ], induced axial velocity / ship velocity.
+Ut 	 [ ], induced tangential velocity / ship velocity.
+beta 	 [deg], flow angle.
+betaI 	 [deg], hydrodynamic Pitch angle.
+c/D 	 [ ], section chord-length / propeller diameter.
+Cd 	 [ ], section drag coefficient.
+
+X/R 	 [ ], axial location of duct vortex rings / propeller radius.
+G  	 [ ], duct vortex ring circulation / 2*pi*R.
+UA/VS 	 [ ], axial inflow induced by propeller / ship velocity.
+UR/VS 	 [ ], radial inflow induced by propeller / ship velocity.

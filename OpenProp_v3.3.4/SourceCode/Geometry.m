@@ -762,14 +762,14 @@ if Make3Dplot_flag
 end                                              % (END IF Make3Dplot_flag)
 %%
 % ----------------------------------------------- Make SolidWorks_v18 files
-if Make_SWrks_flag
+if 1 %Make_SWrks_flag
     % Make SolidWorks.txt files, with coordinates for a single blade
         
     filename_SolidWorks = strcat(filename,'_SolidWorks_v18.txt');    
     
     
-%           Export_SolidWorks_v18(filename_SolidWorks,Np,Mp,Z,X3D,Y3D,Z3D);    
-    Export_SolidWorks_v18_OneLine(filename_SolidWorks,Np,Mp,Z,X3D,Y3D,Z3D);
+           Export_SolidWorks_v18(filename_SolidWorks,Np,Mp,Z,X3D,Y3D,Z3D);    
+%    Export_SolidWorks_v18_OneLine(filename_SolidWorks,Np,Mp,Z,X3D,Y3D,Z3D);
     
     if Duct_flag == 1
         filename_SolidWorks = strcat(filename,'_SolidWorks_v18_duct.txt');    

@@ -176,22 +176,22 @@ function OpenPropSingle
     % -------------------- Declare Default Input Variables --------------------
 
     % Variables for geometry input table
-    XR_def          = [.2 .3 .4 .5 .6 .7 .8 .9 .95 1];          % Radius ratio (r/R)
+    XR_def          = [.2 .26 .3 .36 .4 .5 .6 .7 .8 .9 0.95 1];          % Radius ratio (r/R)
     N_R0            = length(XR_def);                           % Number of input radii
 
     
     
-    XCoD_def        = [0.1600 0.1812 0.2024 0.2196 0.2305 0.2311 0.2173 0.1807 0.1388 0.0010];     % chord to diameter ratio at XR
+    XCoD_def        = [0.0350 0.0417 0.045 0.050 0.0522 0.0565 0.565 0.541 0.0484 0.0375 0.0279 0];     % chord to diameter ratio at XR
     XCD_def         = ones(1,N_R0).*0.008;                      % Coefficient of drag at XR
 
-    % VAI_def         = ones(1,N_R0);                             % Va/Vs (wake profile at XR)
+    % VAI_def         = [0.414 0.414 0.414 0.568 0.671 0.777 0.908 0.908 0.926 0.943 0.943 0.943];                             % Va/Vs (wake profile at XR)
     % VTI_def         = zeros(1,N_R0);                            % Vt/Vs (wake profile at XR)
 
     % t0oc0_def       = [0.2055 0.1553 0.1180 0.09016 0.06960 0.05418 0.04206 0.03321 0.03228 0.03160];     % Thickness to chord ratio at XR
 
     % Xt0oD_def       = t0oc0_def .* XCoD_def;  % thickness / diameter at XR
 
-      Xt0oD_def       = [0.0329    0.0281    0.0239    0.0198    0.0160    0.0125 0.0091    0.0060    0.0045  0];  % thickness / diameter at XR
+      Xt0oD_def       = [0.0250    0.0235    0.0220    0.0205    0.0190    0.0175    0.0160    0.0145    0.0130    0.0115    0.0100   0];  % thickness / diameter at XR
 
     skew0_def       = zeros(N_R0);                              % Skew at XR
     rake0_def       = zeros(N_R0);                              % Rake at XR
@@ -206,12 +206,12 @@ function OpenPropSingle
 
 
     % General variables
-    Z_def           = 3;                                        % Number of blades
-    N_def           = 200;                                      % Propeller speed [RPM]
-    D_def           = 2;                                        % Propeller diameter [m]
-    T_def           = 25000;                                    % Required thrust [N]
-    Vs_def          = 5;                                        % Ship speed [m/s]
-    Dhub_def        = 0.4;                                      % Hub diameter [m]
+    Z_def           = 2;                                        % Number of blades
+    N_def           = 412.5;                                      % Propeller speed [RPM]
+    D_def           = 0.7;                                        % Propeller diameter [m]
+    T_def           = 33;                                    % Required thrust [N]
+    Vs_def          = 2.572;                                        % Ship speed [m/s]
+    Dhub_def        = 0.102;                                      % Hub diameter [m]
 
 
     % Advanced variables
@@ -339,10 +339,10 @@ function OpenPropSingle
     Ductboxht           = 1 + editboxht * 3 + 2;
     Ductbox             = 2 + textbox + editbox + 2;
 
-    BladeDesignboxht	= 1 + editboxht * 11 + 2;
+    BladeDesignboxht	= 1 + editboxht * 13 + 2;
     BladeDesignbox      = 2 + editbox * 6 + 2;
 
-    Inflowboxht    	= 1 + editboxht * 11 + 2;
+    Inflowboxht    	= 1 + editboxht * 13 + 2;
     Inflowbox      	= 2 + editbox * 3 + 2;
 
     % Cavboxht        = 1 + editboxht * 3 + 2;
@@ -1248,7 +1248,7 @@ function execute(hObject,ED)
     
     % ---------------------------------------------------------------------
     % Determine propeller geometry
-    if Make2Dplot_flag == 1 | Make3Dplot_flag == 1
+    if Make2Dplot_flag == 1 || Make3Dplot_flag == 1
         pt.geometry = Geometry(pt);
     end
     % ---------------------------------------------------------------------

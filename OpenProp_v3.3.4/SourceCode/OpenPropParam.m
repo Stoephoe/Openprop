@@ -122,12 +122,12 @@ XCLmax_values   = XCLmax_def;
 
 
 % General variables
-Z_def           = 3;                                        % Number of blades
-N_def           = 200;                                      % Propeller speed [RPM]
-D_def           = 2;                                        % Propeller diameter [m]
-T_def           = 40000;                                    % Required thrust [N]
+Z_def           = 2;                                        % Number of blades
+N_def           = 700;                                      % Propeller speed [RPM]
+D_def           = 0.35;                                        % Propeller diameter [m]
+T_def           = 225;                                    % Required thrust [N]
 Vs_def          = 5;                                        % Ship speed [m/s]
-Dhub_def        = 0.4;                                      % Hub diameter [m]
+Dhub_def        = 0.066;                                      % Hub diameter [m]
 
 
 % Advanced variables
@@ -149,16 +149,16 @@ TAU_def         = 1;                                        % Thrust ratio
 CDd_def         = 0.008;                                    % Duct section drag coefficient
 
 % Parametric analysis defaults
-BladeMin        = 3;
-BladeMax        = 6;
+BladeMin        = 2;
+BladeMax        = 3;
 
 SpeedMin        = 100;
-SpeedMax        = 200;
-SpeedInc        = 50;
+SpeedMax        = 1000;
+SpeedInc        = 100;
 
-DiameterMin     = 2;
-DiameterMax     = 4;
-DiameterInc     = .5;
+DiameterMin     = 0.2;
+DiameterMax     = 0.4;
+DiameterInc     = .05;
 
 
 
@@ -485,13 +485,13 @@ FlagValues(6)     = uicontrol(Flags,'units','characters','style','checkbox',...
                               [1 Flagboxht-4-textht*4 textbox textht],...
                               'callback',@changeViscous);
 
-% FlagValues(7)     = uicontrol(Flags,'units','characters','style','checkbox',...
-%                               'string','Optimization plots','position',...
-%                               [1 Flagboxht-4-textht*5 textbox textht]);
-% 
-% FlagValues(8)     = uicontrol(Flags,'units','characters','style','checkbox',...
-%                               'string','2D/3D plots','value',1,'position',...
-%                               [1 Flagboxht-4-textht*6 textbox textht]);
+FlagValues(7)     = uicontrol(Flags,'units','characters','style','checkbox',...
+                               'string','Optimization plots','position',...
+                               [1 Flagboxht-4-textht*5 textbox textht]);
+ 
+FlagValues(8)     = uicontrol(Flags,'units','characters','style','checkbox',...
+                               'string','2D/3D plots','value',1,'position',...
+                               [1 Flagboxht-4-textht*6 textbox textht]);
 
 % =========================================================================
 
@@ -731,9 +731,9 @@ Chord_flag	= get(FlagValues(5),'value');                   % ** CHORD OPTIMIZATI
 
 Viscous_flag	= get(FlagValues(6),'value');               % 0 == viscous forces off (CD = 0), 1 == viscous forces on
 
-% Plot_flag       = get(FlagValues(7),'value');               % 0 == do not display plots, 1 == display plots
-% Make2Dplot_flag = get(FlagValues(8),'value');               % 0 == do not make a 2D plot of the results, 1 == make plot
-% Make3Dplot_flag = get(FlagValues(8),'value');               % 0 == do not make a 3D plot of the results, 1 == make plot
+Plot_flag       = get(FlagValues(7),'value');               % 0 == do not display plots, 1 == display plots
+Make2Dplot_flag = get(FlagValues(8),'value');               % 0 == do not make a 2D plot of the results, 1 == make plot
+Make3Dplot_flag = get(FlagValues(8),'value');               % 0 == do not make a 3D plot of the results, 1 == make plot
 
 Plot_flag       = 0;               % 0 == do not display plots, 1 == display plots
 
@@ -779,8 +779,8 @@ parinput.Mp      = Mp;          % [1 x 1]
 parinput.Rhub    = Rhub;        % [1 x 1]
 parinput.XR      = XR;          % [length(XR) x 1]
 
-% parinput.VAI     = VAI;         % [length(XR) x 1]
-% parinput.VTI     = VTI;         % [length(XR) x 1]
+parinput.VAI     = VAI;         % [length(XR) x 1]
+parinput.VTI     = VTI;         % [length(XR) x 1]
 
 parinput.XCD     = XCD;         % [length(XR) x 1]
 parinput.XCoD    = XCoD;        % [length(XR) x 1]
@@ -818,29 +818,29 @@ if ~isempty(VTI) , parinput.VTI = VTI; end        % [length(XR) x 1], [ ] input 
 
 paroutput        = LerbsParametric(parinput);
 
-% 
-% %%
-% 
-% Fig_Param = figure('units','characters','position',[15 15 130 40],...
-%                    'name','Efficiency','numbertitle','off');
-%     for i = 1:length(Z)
-%         if length(Z)==4
-%            subplot(2,2,i);
-%         else
-%            subplot(length(Z),1,i);
+ 
+
+ 
+ Fig_Param = figure('units','characters','position',[15 15 130 40],...
+                    'name','Efficiency','numbertitle','off');
+     for i = 1:length(Z)
+         if length(Z)==4
+            subplot(2,2,i);
+         else
+            subplot(length(Z),1,i);
 %         end
 %         plot(paroutput.D,paroutput.EFFY(:,:,i));
-%         str_suffix={' RPM'};
-%         for j=1:length(N)
-%             str_legend(j)=strcat(num2str(N(j)),str_suffix);
-%         end
-%         legend(str_legend,'location','southwest');    grid on;
-%         xlabel('Propeller Diameter (m)');             ylabel('Efficiency');
-%         title_prefix = {'Number of Blades: '};  
-%         title(strcat(title_prefix,num2str(Z(i))))
+  %       str_suffix={' RPM'};
+  %       for j=1:length(N)
+             str_legend(j)=strcat(num2str(N(j)),str_suffix);
+         end
+         legend(str_legend,'location','southwest');    grid on;
+         xlabel('Propeller Diameter (m)');             ylabel('Efficiency');
+         title_prefix = {'Number of Blades: '};  
+         title(strcat(title_prefix,num2str(Z(i))))
 %     end
-% %     set(New_Parametric,'enable','on');    
-% %     figure(Fig_Main);
+ %     set(New_Parametric,'enable','on');    
+ %     figure(Fig_Main);
 
 
 %%
@@ -943,11 +943,11 @@ function savedata(hObject,ED)
 % This subfunction saves all values presented in the OpenProp GUI.
 %
 
-global OpenPropDirectory SpecificationsValues FlagValues Filename filename RangeValues...
-       XR_in XCoD_in XCD_in VAI_in VTI_in ri_in ...
-       XCoD_values XCLmax_values; % CavValues
+%global OpenPropDirectory SpecificationsValues FlagValues Filename filename RangeValues...
+ %      XR_in XCoD_in XCD_in VAI_in VTI_in ri_in ...
+ %      XCoD_values XCLmax_values; % CavValues
    
-   global paroutput;
+%   global paroutput;
 
 %%
 
@@ -1027,9 +1027,9 @@ Chord_flag	= get(FlagValues(5),'value');                   % ** CHORD OPTIMIZATI
 
 Viscous_flag	= get(FlagValues(6),'value');               % 0 == viscous forces off (CD = 0), 1 == viscous forces on
 
-% Plot_flag       = get(FlagValues(7),'value');               % 0 == do not display plots, 1 == display plots
-% Make2Dplot_flag = get(FlagValues(8),'value');               % 0 == do not make a 2D plot of the results, 1 == make plot
-% Make3Dplot_flag = get(FlagValues(8),'value');               % 0 == do not make a 3D plot of the results, 1 == make plot
+ Plot_flag       = get(FlagValues(7),'value');               % 0 == do not display plots, 1 == display plots
+ Make2Dplot_flag = get(FlagValues(8),'value');               % 0 == do not make a 2D plot of the results, 1 == make plot
+ Make3Dplot_flag = get(FlagValues(8),'value');               % 0 == do not make a 3D plot of the results, 1 == make plot
 
 Plot_flag       = 0;
 Make2Dplot_flag = 0;               % 0 == do not make a 2D plot of the results, 1 == make plot
@@ -1079,8 +1079,8 @@ function loaddata(hObject,ED)
 % This subfunction loads all values presented in the OpenProp GUI.
 %
 
-global OpenPropDirectory SpecificationsValues FlagValues Filename filename RangeValues...
-       XR_in XCoD_in XCD_in VAI_in VTI_in;
+%global OpenPropDirectory SpecificationsValues FlagValues Filename filename RangeValues...
+ %      XR_in XCoD_in XCD_in VAI_in VTI_in;
 
 
 %%
@@ -1151,7 +1151,7 @@ set(RangeValues(9),'string',num2str(DMax));  % max propeller diameter [m]
 set(FlagValues(1),'value',Propeller_flag);               % 0 == turbine, 1 == propeller
 set(FlagValues(3),'value',Hub_flag);                   % 0 == no hub, 1 == hub
 
-% Duct_flag	= get(FlagValues(4),'value');                   % 0 == no duct, 1 == duct
+Duct_flag	= get(FlagValues(4),'value');                   % 0 == no duct, 1 == duct
 
 set(FlagValues(5),'value',Chord_flag);                   % ** CHORD OPTIMIZATION FLAG **
 
@@ -1161,7 +1161,7 @@ set(FlagValues(7),'value',Plot_flag);               % 0 == do not display plots,
 set(FlagValues(8),'value',Make2Dplot_flag);               % 0 == do not make a 2D plot of the results, 1 == make plot
 set(FlagValues(8),'value',Make3Dplot_flag);               % 0 == do not make a 3D plot of the results, 1 == make plot
 
-% Camber_flag     = 0;                                        % ** VERIFY USE, ADD TO GUI **
+Camber_flag     = 0;                                        % ** VERIFY USE, ADD TO GUI **
 
 for index = 1 : length(XR);
     
@@ -1395,58 +1395,57 @@ end
 
 
 
-function changeDir(hObject,ED)
+%function changeDir(hObject,ED)
 
-global Filename filename OpenPropDirectory;
+%global Filename filename OpenPropDirectory;
 
 %%
 
-filename    = get(Filename,'string');                       % Filename prefix
+%filename    = get(Filename,'string');                       % Filename prefix
 
 % ------------------------------------------------------------------------- 
 % Figure out what the current working directory is, 
 % and change directories to OpenPropDirectory/filename
-rest    = pwd;
-root  = '';
+%rest    = pwd;
+%root  = '';
 
-while ~isempty(rest)
-    [CurrentDirectory,rest] = strtok(rest,'/');
+%while ~isempty(rest)
+%    [CurrentDirectory,rest] = strtok(rest,'/');
     
-    if strcmp(CurrentDirectory,OpenPropDirectory)
+%    if strcmp(CurrentDirectory,OpenPropDirectory)
         
-        if isempty(rest)
+ %       if isempty(rest)
             
             % you are in /OpenPropDirectory/
             %             addpath ../SourceCode
             
-        elseif strcmp(rest(2:end),filename)
+ %       elseif strcmp(rest(2:end),filename)
             % already in /OpenPropDirectory/filename/
             %             addpath ../SourceCode
-            rest = [];
+%            rest = [];
             
-        elseif strcmp(rest(2:end),'SourceCode')
+ %       elseif strcmp(rest(2:end),'SourceCode')
             
             %             addpath ../SourceCode
-            rest = [];
+ %           rest = [];
             
-        else
+ %       else
             % you are in /OpenPropDirectory/wrongfolder
 %             disp('NOTICE: Must start OpenProp from the root directory.')
             
-            cd([root '/' OpenPropDirectory]);
+ %           cd([root '/' OpenPropDirectory]);
             
 %             disp('Changed to root directory.')
             
-        end
-    end
+%        end
+ %   end
     
-    root  = [root '/' CurrentDirectory];
+  %  root  = [root '/' CurrentDirectory];
     
-end
+%end
 % -------------------------------------------------------------------------
 
 end
-%%
 
 
 

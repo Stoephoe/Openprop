@@ -1,0 +1,26 @@
+					 SOLAR prop v5_Performance.txt 
+
+					 OpenProp Performance Table
+
+Date and time: 2020-12-17 22:38:24
+
+ r/R	 V*	 beta	 betai	 Gamma	 CL	 Sigma	 dBetai
+0.244	 6.57	 65.87	 67.13	 0.0539	 0.585	 5.926	 12.24
+0.322	 6.97	 59.46	 60.88	 0.0585	 0.514	 5.270	 14.39
+0.399	 7.43	 53.80	 55.38	 0.0636	 0.468	 4.623	 15.63
+0.477	 7.97	 48.85	 50.51	 0.0676	 0.435	 4.022	 16.25
+0.554	 8.55	 44.54	 46.25	 0.0701	 0.411	 3.487	 16.42
+0.632	 9.18	 40.81	 42.51	 0.0704	 0.393	 3.024	 16.29
+0.709	 9.84	 37.57	 39.24	 0.0684	 0.370	 2.629	 15.96
+0.787	 10.52	 34.74	 36.37	 0.0633	 0.347	 2.294	 15.51
+0.864	 11.24	 32.26	 33.84	 0.0542	 0.330	 2.011	 15.00
+0.942	 11.96	 30.09	 31.60	 0.0384	 0.305	 1.771	 14.46
+
+r/R 	 [ ], radial position of control points / propeller radius.
+V* 	 [m/s], total inflow velocity.
+beta 	 [deg], undisturbed flow angle.
+betai 	 [deg], hydrodynamic Pitch angle.
+Gamma 	 [m^2/s], vortex sheet strength.
+CL 	 [ ], section lift coefficient.
+Sigma 	 [ ], cavitation number.
+d_alpha  [deg], inflow variation bucket width.

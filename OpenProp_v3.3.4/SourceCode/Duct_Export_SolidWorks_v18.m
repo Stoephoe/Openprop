@@ -10,9 +10,9 @@
 %   Y2D(i,j,k) [m], Y position in 3D space
 %   Z3D(i,j,k) [m], Z position in 3D space
 %
-%   i = 1:Mp+1      % for each section along the span
-%   j = 1:2*Np      % for each point   along the upper and lower surfaces
-%   k = 1:Z         % for each blade
+   i = 1:Mp+1;      % for each section along the span
+   j = 1:2*Np;      % for each point   along the upper and lower surfaces
+   k = 1:Z;         % for each blade
 %
 % -------------------------------------------------------------------------
 

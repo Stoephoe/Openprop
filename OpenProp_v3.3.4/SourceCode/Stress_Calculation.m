@@ -64,8 +64,8 @@ cos_BetaIC = cos(BetaIC);
 D = 2*R; % [m] diameter
 
 MQ   = zeros(1,Mp);
-MT   = zeros(1,Mp);
 Mxo  = zeros(1,Mp);
+MT   = zeros(1,Mp);
 Myo  = zeros(1,Mp);
 
 blade_stress  = zeros(Mp,2*Np);
