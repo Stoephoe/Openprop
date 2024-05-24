@@ -2,7 +2,7 @@
 
 					 OpenProp Output Table
 
-Date and time: 2024-05-24 15:42:51
+Date and time: 2024-05-24 16:26:52
 
 Js 	= 1.2245
 Ct 	= 0.1871

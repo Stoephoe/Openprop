@@ -2,7 +2,7 @@
 
 					 OpenProp Performance Table
 
-Date and time: 2024-05-24 15:42:51
+Date and time: 2024-05-24 16:26:52
 
  r/R	 V*	 beta	 betai	 Gamma	 CL	 Sigma	 dBetai
 0.264	 6.02	 55.86	 59.08	 0.1169	 1.318	 7.053	 13.83
