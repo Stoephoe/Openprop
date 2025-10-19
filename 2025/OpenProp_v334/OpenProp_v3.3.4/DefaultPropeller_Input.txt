@@ -2,16 +2,16 @@
 
 					 OpenProp Input Table
 
-Date and time: 2025-10-18 20:27:03
+Date and time: 2025-10-19 11:49:04
 
 20 	Number of Vortex Panels over the Radius
 1 	Hub Image Flag: 1=YES, 0=NO
 0 	Duct Flag:      1=YES, 0=NO
-0.225 	Duct Diameter
+0.700 	Duct Diameter
 0.5 	Hub Vortex Radius/Hub Radius
 2 	Number of Blades
-1.493 	Advance Coefficient Based on Ship Speed, Js
-1.604 	Desired Thrust Coefficient, Ct
+0.534 	Advance Coefficient Based on Ship Speed, Js
+0.026 	Desired Thrust Coefficient, Ct
 1.000 	Desired Thrust Ratio, tau
 0.000 	Duct Section Drag Coefficient, CDd
 0 	Hub Unloading Factor: 0 = optimum

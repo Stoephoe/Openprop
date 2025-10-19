@@ -27,7 +27,7 @@ cd(foldername);
 
 %section curves
 for k = 1:Mp
-    filename_SolidWorks_improved = strcat('SectionCurve',num2str(k),'.txt');
+    filename_SolidWorks_improved = strcat('SectionCurve',num2str(k),'.csv');
     fid = fopen(filename_SolidWorks_improved,'wt');
 
     
