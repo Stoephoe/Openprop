@@ -32,7 +32,7 @@ for k = 1:Mp
 
     
     for j = [1:Np,Np+2:2*Np-1,1] % (2*Np-1 points) does not double print the leading edge
-        fprintf(fid,'%f,%f,%f,\n',X3D(k,j,1)*39.3700787,Y3D(k,j,1)*-39.3700787,Z3D(k,1,1)*39.3700787);
+        fprintf(fid,'%f,%f,%f,\n',X3D(k,j,1),Y3D(k,j,1),Z3D(k,1,1));
     end
     
 %     k = 1;
