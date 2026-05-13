@@ -71,8 +71,8 @@ r1       = RC1.*R1;                  % radius of the c. points [m]
  
 r2       = RC2.*R2; 
 theta_Z1 = 0:360/Z1:360;             % angle between blades [deg] 
-theta_Z2 = 360/(2*Z2):360/Z2:360+360/(2*Z2);   % angle between blades [deg] 
-%       or 0:360/Z2:360 
+%theta_Z2 = 360/(2*Z2):360/Z2:360+360/(2*Z2);   % angle between blades [deg] 
+theta_Z2 = 0:360/Z2:360; 
 % ---------------------------------------- Lay out the 2D coordinate system 
 % 
 % xN   [ ], x/c coordinate in 2D NACA foil tables 

@@ -3,16 +3,16 @@
   %%********************************************************************%%
 
     Rhub        = 0.066/2;                     %[m],    Hub radius (common for both propellers) 
-    R1          = 0.25/2;                       %[m],    Propeller radius front prop
-    R2          = 0.20/2;                       %[m],    Propeller radius back prop
+    R1          = 0.30/2;                       %[m],    Propeller radius front prop
+    R2          = 0.275/2;                       %[m],    Propeller radius back prop
     M1          = 10;                           %[ ],    Number of vortex panels over the radius front prop
     M2          = 10;                           %[ ],    Number of vortex panels over the radius back prop
-    Z1          = 3;                            %[ ],    Number of blades front prop
-    Z2          = 3;                            %[ ],    Number of blades back prop
-    Tr          = 350;                          %[N],    Required total thrust
+    Z1          = 2;                            %[ ],    Number of blades front prop
+    Z2          = 2;                            %[ ],    Number of blades back prop
+    Tr          = 125;                          %[N],    Required total thrust
     q           = 1;                            %[ ],    torque ratio Q2/Q1 
-    N1          = 1500;                         %[RPM],  Propeller speed front prop
-    N2          = 1500;                         %[RPM],  Propeller speed back prop
+    N1          = 1000;                         %[RPM],  Propeller speed front prop
+    N2          = 1000;                         %[RPM],  Propeller speed back prop
     XR1         = [0.284,0.3,0.4,0.5,0.6,...
                    0.7,0.8,0.9,0.95,1];         %[ ],    Radial locations for defining inflow velocities   
                                                 %        and geometric properties front prop
@@ -36,7 +36,7 @@
     Hub_Flag    = 1;                            %        Inclusion of hub effects (1=YES, 0=NO) 
     Rhv         = 0.001;                        %        Hub Vortex Radius/Hub Radius ???
        
-    Vs          = 6;                            %[m/s],  Ship speed 
+    Vs          = 3.26;                            %[m/s],  Ship speed 
     XVA1        = ones(size(XR1));              %[ ],    Va/Vs, axial inflow vel. / ship vel.
     XVA2        = ones(size(XR2));              %[ ],    Va/Vs, axial inflow vel. / ship vel. 
     XVT1        = zeros(size(XR1));             %[ ],    Vt/Vs, tangential inflow vel. / ship vel. 
